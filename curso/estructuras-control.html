@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Elementos básicos de un programa y estructuras de control | Curso Programación .NET</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="Creación de aplicaciones con C# y .NET">
+    
+    <link rel="preload" href="/assets/css/0.styles.fab77d47.css" as="style"><link rel="preload" href="/assets/js/app.4a152fdc.js" as="script"><link rel="preload" href="/assets/js/2.a7f16d2c.js" as="script"><link rel="preload" href="/assets/js/9.18c1b58c.js" as="script"><link rel="prefetch" href="/assets/js/10.2ceba617.js"><link rel="prefetch" href="/assets/js/11.a6400666.js"><link rel="prefetch" href="/assets/js/3.85c57184.js"><link rel="prefetch" href="/assets/js/4.77a548c8.js"><link rel="prefetch" href="/assets/js/5.5fd3c55b.js"><link rel="prefetch" href="/assets/js/6.706caab8.js"><link rel="prefetch" href="/assets/js/7.74938af9.js"><link rel="prefetch" href="/assets/js/8.64dc5611.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fab77d47.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Curso Programación .NET</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/curso/" aria-current="page" class="sidebar-link">Introducción a C# y .NET</a></li><li><a href="/curso/estructuras-control.html" aria-current="page" class="active sidebar-link">Elementos básicos de un programa y estructuras de control</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/curso/estructuras-control.html#c-como-lenguaje-de-programacion" class="sidebar-link">C# como lenguaje de programación</a></li><li class="sidebar-sub-header"><a href="/curso/estructuras-control.html#variables" class="sidebar-link">Variables</a></li><li class="sidebar-sub-header"><a href="/curso/estructuras-control.html#operadores" class="sidebar-link">Operadores</a></li><li class="sidebar-sub-header"><a href="/curso/estructuras-control.html#pedir-datos-al-usuario" class="sidebar-link">Pedir datos al usuario</a></li><li class="sidebar-sub-header"><a href="/curso/estructuras-control.html#la-toma-de-decisiones-if-switch" class="sidebar-link">La toma de decisiones IF - SWITCH</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="elementos-basicos-de-un-programa-y-estructuras-de-control"><a href="#elementos-basicos-de-un-programa-y-estructuras-de-control" class="header-anchor">#</a> Elementos básicos de un programa y estructuras de control</h1> <h2 id="c-como-lenguaje-de-programacion"><a href="#c-como-lenguaje-de-programacion" class="header-anchor">#</a> C# como lenguaje de programación</h2> <p>Asi como para comunicarnos entre personas utilizamos algún lenguaje común para entendernos, también necesitamos un lenguaje en común para comunicarnos con la computadora y asi darle instrucciones para que nos logre entender. C# es un lenguaje de alto nivel orientado a objetos, lo que significa que su sintaxis es sencilla para cualquier persona, ademas es un lenguaje utilizado para crear aplicaciones de escritorio, web, mobile y videojuegos, sumado a esto tiene el respaldo de una gran compañía como microsoft.</p> <h3 id="orden-de-ejecucion-de-un-programa"><a href="#orden-de-ejecucion-de-un-programa" class="header-anchor">#</a> Orden de ejecución de un programa</h3> <p>Un <strong>algoritmo</strong> se puede definir como una secuencia de instrucciones que representan un modelo de solución para determinado tipo de problemas. O bien como un conjunto de instrucciones que realizadas en orden conducen a obtener la solución de un problema. Esta secuencia de instrucciones debe ser finita, osea tener un inicio y un fin.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;1.- Pre calentar el horno&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;2.- Mezclar harina y mantequilla&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;3.- Agregar azúcar y un huevo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;4.- Amasar mezcla&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;5.- Darles forma y colocar en molde&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;6.- Hornear durante 10 minutos&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>El resultado de la ejecución es el siguiente:
+<img src="/img/consolaReceta.png" alt="An Image"></p> <h2 id="variables"><a href="#variables" class="header-anchor">#</a> Variables</h2> <p>En el ámbito de los lenguajes de programación, una variable significa el espacio reservado en la memoria que tiene la capacidad de cambiar de contenido mientras se desarrolla la ejecución de algún software.
+Estas pueden almacenar un tipo de dato especificado y tener un nombre para identificarlas.</p> <p>Un ejemplo sencillo es una caja:
+<img src="/img/variables.png" alt="An Image"></p> <div class="custom-block warning"><p class="custom-block-title">Consideraciones</p> <ul><li>Los identificadores deben tener un nombre con una letra o guion bajo.</li> <li>Los identificadores pueden contener números, pero no empezar con ellos.</li> <li>Los identificadores no pueden llevar acentos.</li> <li>Los identificadores no pueden llevar símbolos extraños salvo el guion bajo.</li> <li>Los identificadores no pueden llevar espacios.</li> <li>Los identificadores no pueden ser palabras reservadas.</li> <li>Los identificadores deben ser congruentes con su función.</li> <li>C# es case sensitive.</li> <li>Se utilizara Camel Case.</li></ul></div> <h3 id="tipos-y-variables"><a href="#tipos-y-variables" class="header-anchor">#</a> Tipos y variables</h3> <p>Primero que todo debemos conocer un par de conceptos:</p> <ul><li><p><strong>La pila o &quot;stack&quot;</strong>: es una zona de memoria reservada para almacenar información de uso inmediato por parte del hilo de ejecución actual del programa.  Por ejemplo, cuando se llama a una función se reserva un bloque en la parte superior de esta zona de memoria (de la pila) para almacenar los parámetros y demás variables de ámbito local. Cuando se llama a la siguiente función este espacio se “libera” (en el sentido de que ya no queda reservado) y puede ser utilizado por la nueva función. Es por esto que si hacemos demasiadas llamadas anidadas a funciones (en recursión, por ejemplo) podemos llegar a quedarnos sin espacio en la pila, obteniendo un “stack overflow”.</p></li> <li><p><strong>El montón o &quot;heap&quot;</strong>: es una zona de memoria reservada para poder asignarla de manera dinámica. Al contrario que en la pila no existen “normas” para poder asignar o desasignar información en el montón, pudiendo almacenar y eliminar datos en cualquier momento, lo cual hace más complicada la gestión de la memoria en esta ubicación.</p></li></ul> <p>Ya con estos conceptos claros veremos:</p> <ul><li><strong>Tipos por valor</strong>: son tipos sencillos que almacenan un dato concreto y que se almacenan en la pila. Por ejemplo, los tipos primitivos de .NET como int o bool, las estructuras o las enumeraciones. Se almacenan en la pila y se copian por completo cuando se asignan a una función. Por eso cuando se pasa un tipo primitivo a una función, aunque lo cambiemos dentro de ésta, el cambio no se ve reflejado fuera de la misma.</li></ul> <p>Ejemplo:</p> <ul><li>Por valor:</li></ul> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> i <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token function">Suma2</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> <span class="token function">Suma2</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> n<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            n <span class="token operator">=</span> n <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>En este caso definimos una función que simplemente le suma 2 al parámetro que se le pase (de una forma poco eficiente, eso sí) transformando el valor que se le pasa. Se podría pensar que ya que la función cambia el valor que le hemos pasado, cuando mostremos por pantalla posteriormente el valor de i, éste debería ser 7. Sin embargo vemos que, aunque se ha cambiado dentro de la función, sigue siendo 5:</p> <p><img src="/img/porValor.png" alt="An Image"></p> <p>Esto es debido a que los números enteros son tipos por valor y por lo tanto se pasa una copia de los mismos a la pila de la función que se llama, no viéndose afectado el valor original.</p> <ul><li>Por referencia:</li></ul> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name">Persona</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Persona</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            p<span class="token punctuation">.</span>Nombre <span class="token operator">=</span> <span class="token string">&quot;Antonio&quot;</span><span class="token punctuation">;</span>
+            p<span class="token punctuation">.</span>Apellidos <span class="token operator">=</span> <span class="token string">&quot;López&quot;</span><span class="token punctuation">;</span>
+            p<span class="token punctuation">.</span>Edad <span class="token operator">=</span> <span class="token number">27</span><span class="token punctuation">;</span>
+
+            <span class="token function">CambiaNombre</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>Nombre<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Persona</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">string</span></span> Nombre<span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">string</span></span> Apellidos<span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">int</span></span> Edad<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">CambiaNombre</span><span class="token punctuation">(</span><span class="token class-name">Persona</span> per<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            per<span class="token punctuation">.</span>Nombre <span class="token operator">=</span> per<span class="token punctuation">.</span>Nombre <span class="token operator">+</span> <span class="token string">&quot; CAMBIADO&quot;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p>Lo que hacemos en el fragmento anterior es definir una clase persona muy sencilla y pasársela a una función que modifica su nombre. Cuando ejecutemos el código se verá por pantalla el nombre de la persona cambiado:</p> <p><img src="/img/porReferencia.png" alt="An Image"></p> <p>Es decir, los cambios son apreciables en el origen, fuera de la propia función.</p> <p>¿A qué es debido esto?
+El motivo es que, como hemos dicho, los tipos por referencia se almacenan siempre en el montón, y lo que se pasa a la función como parámetro no es una copia del dato, como en el caso de los tipos por valor, sino una copia de la referencia al dato.</p> <p>Para entenderlo de mejor manera veamos de manera gráfica;
+Vamos a ver en un gráfico la situación de la pila y el montón en el caso del primer código, donde solo manejábamos un tipo por valor:</p> <p><img src="/img/graficoValor.png" alt="An Image"></p> <p>Como podemos observar, al definir la variable i ésta se almacena en la pila directamente ya que es un tipo por valor. Al llamar a la función Suma2 pasándole i como argumento, lo que ocurre es que el valor de la variable i se copia a la pila y se asigna al parámetro n de la función (repasa el código anterior). De esta forma tenemos dos copias del dato en la pila, por eso al modificar n no se afecta para nada al valor original de i. En el montón, por cierto, no tenemos nada almacenado.</p> <p>Consideremos ahora el código del segundo ejemplo y veamos qué se genera en la pila y en el montón en este caso:</p> <p><img src="/img/graficoReferencia.png" alt="An Image"></p> <p>Ahora la cosa cambia bastante. Al declarar una variable de tipo Persona se genera una instancia de la misma en el montón, ya que es un tipo por referencia. Al asignar los valores de las diferentes propiedades, esos datos se almacenan en el montón asociadas a la instancia de la clase Persona que acabamos de crear. Lo que realmente almacena la variable p es una referencia a los datos de esa persona que están en el montón.</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>Es decir, ahora en la pila no se almacenan los datos en sí, sino tan solo un “puntero” a los mismos. Es una forma indirecta de referirse a ellos, no como antes en los tipos por valor que el dato se almacenaba directamente en la pila.</p></div> <p>Al llamar a la función CambiaNombre, en la variable local per que constituye el parámetro de la función, lo que se duplica ahora en la pila es la referencia al objeto, no el objeto en sí. Es decir, al hacer la llamada disponemos de dos variables que apuntan al mismo tiempo a los datos almacenados en el montón. Por eso cuando cambiamos una propiedad del objeto, al estar ambas referencias apuntando a los mismos datos, los cambios se ven desde los dos lados.</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>En realidad el comportamiento de la pila es idéntico en ambos casos, lo que cambia es la información que se almacena, que es el propio dato en el caso de los tipos por valor, y la referencia al dato en el caso de los tipos por referencia.</p></div> <p>Este modo de funcionamiento es la diferencia fundamental que existe entre los tipos por valor y los tipos por referencia, y es muy importante tenerla clara pues tiene muchas implicaciones a la hora de escribir código.</p> <div class="custom-block tip"><p class="custom-block-title">Para revisar</p> <p>Documentación oficial =&gt; <a href="https://docs.microsoft.com/es-mx/dotnet/csharp/language-reference/builtin-types/value-types#built-in-value-types" target="_blank" rel="noopener noreferrer">Tipos de datos<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <h3 id="declarar-una-variable"><a href="#declarar-una-variable" class="header-anchor">#</a> Declarar una variable</h3> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token comment">//Declaración de una sola variable</span>
+<span class="token class-name"><span class="token keyword">int</span></span> cantidadManzanas<span class="token punctuation">;</span>
+
+<span class="token comment">// si tenemos varias del mismo tipo podemos hacer lo siguiente</span>
+<span class="token class-name"><span class="token keyword">int</span></span> cantidadManzanas<span class="token punctuation">,</span> cantidadPeras<span class="token punctuation">,</span> cantidadNaranjas<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="inicializar-una-variable"><a href="#inicializar-una-variable" class="header-anchor">#</a> Inicializar una variable</h3> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token class-name"><span class="token keyword">int</span></span> cantidadManzanas<span class="token punctuation">;</span>
+cantidadManzanas <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token comment">//también podemos hacer esto en la misma linea</span>
+<span class="token class-name"><span class="token keyword">int</span></span> cantidadManzanas <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">string</span></span> tipoFruta <span class="token operator">=</span> <span class="token string">&quot;manzana&quot;</span><span class="token punctuation">;</span> <span class="token comment">// si usamos String estamos usando la clase</span>
+<span class="token class-name"><span class="token keyword">char</span></span> letra <span class="token operator">=</span> <span class="token string character">'a'</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">bool</span></span> hayManzanas <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">decimal</span></span> nota <span class="token operator">=</span> <span class="token number">6.7m</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">double</span></span> nota <span class="token operator">=</span> <span class="token number">6.5f</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="imprimir-variables-por-la-consola"><a href="#imprimir-variables-por-la-consola" class="header-anchor">#</a> Imprimir variables por la consola</h3> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">//impresión de texto simple</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Imprimiendo texto&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">//impresión de una variable</span>
+            <span class="token class-name"><span class="token keyword">string</span></span> otroTexto <span class="token operator">=</span> <span class="token string">&quot;Imprimiendo otro texto&quot;</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>otroTexto<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">//impresión con una cadena de formato</span>
+            <span class="token class-name"><span class="token keyword">decimal</span></span> temperatura <span class="token operator">=</span> <span class="token number">28.5m</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">string</span></span> ciudad <span class="token operator">=</span> <span class="token string">&quot;Temuco&quot;</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;La temperatura en {0} es de {1} grados&quot;</span><span class="token punctuation">,</span> ciudad<span class="token punctuation">,</span> temperatura<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="operadores"><a href="#operadores" class="header-anchor">#</a> Operadores</h2> <p>Operadores aritméticos:
+Los operadores siguientes realizan operaciones aritméticas con operandos de tipos numéricos:</p> <ul><li>Unarios: ++(incremento), --(decremento), +(mas) y -(menos)</li> <li>Binarios: * (multiplicación), / (división), % (resto), + (suma) y - (resta).</li></ul> <p>Estos operadores se admiten en todos los tipos numéricos enteros y de punto flotante. La jerarquía de operaciones es igual a la matemática.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> numero <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+            <span class="token comment">//incremento</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token operator">++</span>numero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//decremento</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token operator">--</span>numero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//suma</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">+</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//resta</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">-</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//multiplicación</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token number">13</span> <span class="token operator">*</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//división</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token number">6</span> <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//modulo</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token number">6</span> <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h2 id="pedir-datos-al-usuario"><a href="#pedir-datos-al-usuario" class="header-anchor">#</a> Pedir datos al usuario</h2> <div class="language-csharp line-numbers-mode"><div class="highlight-lines"><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br></div><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">string</span></span> dato <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>dato<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>convertir una cadena a tipo numérico.</p> <div class="language-csharp line-numbers-mode"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br></div><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Suma de dos números&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Ingrese primer numero&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">string</span></span> primerNumero <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Ingrese segundo numero&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">string</span></span> segundoNumero <span class="token operator">=</span> Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token class-name"><span class="token keyword">int</span></span> resultadoSuma <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span>primerNumero<span class="token punctuation">)</span> <span class="token operator">+</span> Convert<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span>segundoNumero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;El resultado de la suma es: &quot;</span> <span class="token operator">+</span> resultadoSuma<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><details class="custom-block details"><summary>Tarea</summary> <p>Crear un convertidor de divisas entre dolares a pesos chilenos, simple.</p></details> <h2 id="la-toma-de-decisiones-if-switch"><a href="#la-toma-de-decisiones-if-switch" class="header-anchor">#</a> La toma de decisiones IF - SWITCH</h2> <h3 id="if"><a href="#if" class="header-anchor">#</a> IF</h3> <p>Tanto en la vida real como en la programación nos veremos enfrentados a tomar una decision para ver que camino debe seguir cierto evento, esto quiere decir que algo deberá suceder si se cumple cierta condición o también cuando no se cumpla.</p> <p>Para resolver este tipo de decisiones necesitamos conocer los operadores de igualdad y de comparación los cuales se evaluaran y deberán entregar un resultado de condición boleana (true o false).</p> <p><img src="/img/igualdad.png" alt="An Image"></p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> b <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// False</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//True</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a <span class="token operator">!=</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token class-name"><span class="token keyword">int</span></span> c <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> d <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+
+            <span class="token comment">//True</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>c <span class="token operator">==</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//False</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>c <span class="token operator">!=</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p><img src="/img/comparacion.png" alt="An Image"></p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> b <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// False</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a <span class="token operator">&gt;</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//True</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a <span class="token operator">&lt;</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>            
+
+            <span class="token comment">//False</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>b <span class="token operator">&lt;=</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//True</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>b <span class="token operator">&gt;=</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>Las condiciones evaluadas anteriormente podemos asignarlas a una variable o dejarlas directamente en nuestro if, si esta condición es true se ejecutara el código interno.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>    
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> b <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+            <span class="token return-type class-name">bol</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a <span class="token operator">&gt;</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">&gt;</span> b<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;A es mayor que B&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;A es menor que B&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token class-name"><span class="token keyword">bool</span></span> condicion <span class="token operator">=</span> a <span class="token operator">&gt;</span> b<span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>condicion<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;A es mayor que B&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;A es menor que B&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><p>Ahora veremos que las condiciones if pueden ser anidadas, aunque no es recomendable</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> num <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;es mayor que 10&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span>
+                <span class="token punctuation">{</span>
+                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;es menor que 10&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>También podemos ver los else if, aunque igual no es muy recomendable.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> num <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;El numero es 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;El numero es 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;El numero es 3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;El numero es 4&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;no se cual es el numero&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>Esta lógica puede traer muchos dolores de cabeza si no analizamos bien la situación y aplicamos la mejor opción en nuestro desarrollo.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">bool</span></span> condicion <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>condicion<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;La evaluación es true&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>Ahora veremos un ejemplo de los operadores lógicos booleanos, y como trabajan</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Al negar el false sera true&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;El AND evaluara que ambas condiciones sean true para ser true&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Si una de las dos es falsa sera false&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;Solo es necesario que una de las dos sea verdadera&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">Expresión ternaria</p> <p>Este es otro tipo de if en el cual podemos evaluar sentencias sencillas y suele ser muy util.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> num <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+            <span class="token class-name"><span class="token keyword">string</span></span> respuesta <span class="token operator">=</span> num <span class="token operator">&gt;</span> <span class="token number">10</span> <span class="token punctuation">?</span> <span class="token string">&quot;el numero es mayor que 10&quot;</span> <span class="token punctuation">:</span> <span class="token string">&quot;el numero es menor que 10&quot;</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>respuesta<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div></div> <h3 id="switch"><a href="#switch" class="header-anchor">#</a> SWITCH</h3> <p>A diferencia del if (que evaluá una condicion), el switch compara una condicion con múltiples casos (expresión de coincidencia). Entendiendo que es similar a un if si tenemos mas de dos opciones condicionales se recomienda usar switch.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">AplicacionConsola</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> num <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">string</span></span> numero<span class="token punctuation">;</span>
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">case</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                    numero <span class="token operator">=</span> <span class="token string">&quot;uno&quot;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">2</span><span class="token punctuation">:</span>
+                    numero <span class="token operator">=</span> <span class="token string">&quot;dos&quot;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">3</span><span class="token punctuation">:</span>
+                    numero <span class="token operator">=</span> <span class="token string">&quot;tres&quot;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">4</span><span class="token punctuation">:</span>
+                    numero <span class="token operator">=</span> <span class="token string">&quot;cuatro&quot;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">5</span><span class="token punctuation">:</span>
+                    numero <span class="token operator">=</span> <span class="token string">&quot;cinco&quot;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">default</span><span class="token punctuation">:</span>
+                    numero <span class="token operator">=</span> <span class="token string">&quot;error&quot;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>numero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">Constante</p> <p>Todo lo contrario a una variable (que su valor puede cambiar durante la ejecución del programa), la constante mantiene su valor inalterable, esto nos puede servir para definir ciertos valores que necesitemos que no cambien como por ejemplo pi (3.1416). Para definir pi como constante lo podemos realizar de la siguiente manera.</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token keyword">const</span> <span class="token class-name"><span class="token keyword">decimal</span></span> pi <span class="token operator">=</span> <span class="token number">3.1416m</span><span class="token punctuation">;</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <details class="custom-block details"><summary>Tareas</summary> <ul><li><p>Hacer un programa que le pida al usuario un número del 1 al 12 y escriba el nombre del mes que corresponde ese número en el calendario. Agregar un case default.</p></li> <li><p>Hacer un programa que le pida al usuario un número y decirle si éste es par o impar.</p></li> <li><p>Hacer un programa que le diga al usuario el precio que debe pagar por el servicio de estacionamiento de un centro comercial con base en el tiempo que ha permanecido ahí, los primeros 60 minutos: $500, las primeras 2 horas $800 y de 2 horas en adelante: $1500</p></li></ul></details></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/curso/" class="prev router-link-active">
+        Introducción a C# y .NET
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4a152fdc.js" defer></script><script src="/assets/js/2.a7f16d2c.js" defer></script><script src="/assets/js/9.18c1b58c.js" defer></script>
+  </body>
+</html>
