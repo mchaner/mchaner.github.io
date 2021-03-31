@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Los Métodos | Curso Programación .NET</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="Creación de aplicaciones con C# y .NET">
+    
+    <link rel="preload" href="/assets/css/0.styles.fab77d47.css" as="style"><link rel="preload" href="/assets/js/app.b9efc3ac.js" as="script"><link rel="preload" href="/assets/js/2.a7f16d2c.js" as="script"><link rel="preload" href="/assets/js/11.c49f17b6.js" as="script"><link rel="prefetch" href="/assets/js/10.e4e91b09.js"><link rel="prefetch" href="/assets/js/3.85c57184.js"><link rel="prefetch" href="/assets/js/4.77a548c8.js"><link rel="prefetch" href="/assets/js/5.5fd3c55b.js"><link rel="prefetch" href="/assets/js/6.706caab8.js"><link rel="prefetch" href="/assets/js/7.74938af9.js"><link rel="prefetch" href="/assets/js/8.2c079f51.js"><link rel="prefetch" href="/assets/js/9.ec0bc2b9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fab77d47.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Curso Programación .NET</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/curso/" aria-current="page" class="sidebar-link">Introducción a C# y .NET</a></li><li><a href="/curso/elementos-basicos.html" class="sidebar-link">Elementos básicos de un programa</a></li><li><a href="/curso/estructuras-control.html" class="sidebar-link">Estructuras de control</a></li><li><a href="/curso/los-metodos.html" aria-current="page" class="active sidebar-link">Los Métodos</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="los-metodos"><a href="#los-metodos" class="header-anchor">#</a> Los Métodos</h1> <p>En la programación, un método es una subrutina cuyo código es definido en una clase y puede pertenecer tanto a una clase, como es el caso de los métodos de clase o estáticos, como a un objeto, como es el caso de los métodos de instancia.</p> <p>Estructura de un método:</p> <div class="language-csharp line-numbers-mode"><pre class="language-csharp"><code><span class="token comment">/* static =&gt; modificador
+     * void =&gt; tipo o retorno
+     * Metod =&gt; nombre del método
+     * () =&gt; donde enviaremos los parámetros
+     */</span>
+    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Method</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> num<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">string</span></span> texto<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">//instrucciones de código</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//Método sin parámetros, ni tipo</span>
+    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">//instrucciones de código</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//Método sin parámetros, pero con tipo</span>
+    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> <span class="token function">Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">int</span></span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//Método con parámetros, pero sin tipo</span>
+    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Method</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> num<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">Writeline</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>        
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//Método con parámetros y con tipo</span>
+    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> <span class="token function">Method</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> num<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">int</span></span> response <span class="token operator">=</span> num<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">;</span>        
+    <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/curso/estructuras-control.html" class="prev">
+        Estructuras de control
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b9efc3ac.js" defer></script><script src="/assets/js/2.a7f16d2c.js" defer></script><script src="/assets/js/11.c49f17b6.js" defer></script>
+  </body>
+</html>
